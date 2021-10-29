@@ -56,8 +56,19 @@ function gotPoses(poses) {
 //draw sketch
 function draw() {
   background(220);
-  image(cam, 0, 0, sketchWidth, sketchHeight);
+//   image(cam, 0, 0, sketchWidth, sketchHeight);
+    pastFrames[0].image(cam, 0, 0, width, height);
+    for (let i = 0; i < pastFrames.length; i++) {
+        image(pastFrames[i], 0, stripHeight * i, width, stripHeight, 0, stripHeight * i, width, stripHeight);
+      }
+    
+      for (let i = 0; i < pastFrames.length; i++) {
+        pastFrames[i] = pastFrames[i + 1];
+      }
+    
+      pastFrames[pastFrames.length - 1] = pastFrames[0];
 
+  //look for poses
   if (pose) {
     let earR = pose.rightEar;
     let earL = pose.leftEar;
