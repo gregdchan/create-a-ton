@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  background: #f7c82d;
 }
 
 canvas {
@@ -13,11 +14,9 @@ canvas {
 #top {
   position: relative;
   width: 100%;
-  height: 400px;
   left: 0px;
   top: 0px;
   padding: 25px;
-  background: linear-gradient(84.56deg, #2A850E 20%, rgba(217, 4, 41, 0.9) 97.41%);
 }
 
 h1 {
@@ -26,10 +25,10 @@ h1 {
   font-style: normal;
   font-weight: 500;
   font-size: 66px;
-  line-height: 77px;
+  line-height: 70px;
   text-align: center;
-  color: #FFFFFF;
-  padding-top: 3%;
+  color: #000000;
+  padding-top: 2%;
 }
 h2 {
   /* position: center; */
@@ -39,8 +38,8 @@ h2 {
   font-size: 36px;
   line-height: 77px;
   text-align: center;
-  color: #FFFFFF;
-  padding-top: 3%;
+  color: #000000;
+  padding-top: 2%;
 }
 .half {
   width: 45%;
@@ -58,26 +57,22 @@ h2 {
   font-family: sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 20px;
+  line-height: 22px;
   /* identical to box height */
   text-align: center;
-  color: rgba(255, 255, 255, 0.51);
-}
-
-.first {
+  color: rgb(55, 55, 55);
   padding-top: 2%;
 }
 
 .small-grey-text {
   font-family: 'Roboto', sans-serif;
-  font-style: normal;
+  font-style: italic;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 12px;
   text-align: center;
-  padding-top: 1.5%;
-  padding-bottom: 1%;
   color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
 }
 
 a {
@@ -86,17 +81,6 @@ a {
   color: rgba(196, 37, 210, 0.42) 97.41%;
 }
 
-#thanky {
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
-  padding-bottom: 3%;
-
-  color: #000000;
-}
 .p5Canvas {
   padding-bottom:200px;
 }
