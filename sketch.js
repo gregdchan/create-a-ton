@@ -6,7 +6,7 @@ let isRecording = false;
 
 //framestrip array setup
 let pastFrames = [];
-let numFrames = 10;
+let numFrames = 50;
 let stripHeight;
 
 //posenet setup
@@ -19,9 +19,15 @@ const sketchWidth = 640;
 const sketchHeight= 480;
 
 //bobcat
-let bobCat;
+let mascot = [];
+let numMascots = 10;
 
-let filters;
+
+function preload() {
+  for (let i = 0; i <numMascots; i++) {
+      mascot[i] = loadImage("assets/mascot" + i + ".png");
+  }
+}
 
 function setup() {
   createCanvas(sketchWidth, sketchHeight);
@@ -31,9 +37,7 @@ function setup() {
   const poseNet = ml5.poseNet(cam, modelLoaded);
   poseNet.on('pose', gotPoses);
   //bobcat logo
-  bobCat = loadImage('assets/nyu.png');
   
-
   stripHeight = height / numFrames;
 
   for (let i = 0; i < numFrames; i++) {
@@ -77,9 +81,11 @@ function draw() {
     let earL = pose.leftEar;
     let d = dist(earR.x, earR.y, earL.x, earL.y);
     fill(0, 100, 0);
-    image (bobCat, pose.rightEar.x, pose.nose.y-d)
+    let randomMascot = random(mascot)
+    image (randomMascot, pose.rightEar.x, pose.nose.y-d)
     
-    filter (POSTERIZE, 3);
+    // filter (POSTERIZE, 3);
+    tint(0, 153, 204);
     
     fill(0, 0, 255);
     ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
@@ -92,13 +98,13 @@ function draw() {
     //   ellipse(x,y,16,16);
     // }
     
-//     for (let i = 0; i < skeleton.length; i++) {
-//       let a = skeleton[i][0];
-//       let b = skeleton[i][1];
-//       strokeWeight(2);
-//       stroke(255);
-//       line(a.position.x, a.position.y,b.position.x,b.position.y);      
-//     }
+    for (let i = 0; i < skeleton.length; i++) {
+      let a = skeleton[i][0];
+      let b = skeleton[i][1];
+      strokeWeight(2);
+      stroke(255);
+      line(a.position.x, a.position.y,b.position.x,b.position.y);      
+    }
   }
   
 
