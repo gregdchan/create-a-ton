@@ -6,7 +6,7 @@ let isRecording = false;
 
 //framestrip array setup
 let pastFrames = [];
-let numFrames = 35;
+let numFrames = 150;
 let stripHeight;
 
 //posenet setup
@@ -65,6 +65,7 @@ function draw() {
     pastFrames[0].image(cam, 0, 0, width, height);
     for (let i = 0; i < pastFrames.length; i++) {
         image(pastFrames[i], 0, stripHeight * i, width, stripHeight, 0, stripHeight * i, width, stripHeight);
+        //tint(0, random(80, 160), random(20,104));
       }
     
       for (let i = 0; i < pastFrames.length; i++) {
@@ -82,8 +83,8 @@ function draw() {
     let randomMascot = random(mascot)
     image (randomMascot, pose.rightEar.x, pose.nose.y-d)
     
-    // filter (POSTERIZE, 3);
-    tint(0, 153, 104);
+    filter (POSTERIZE, 3);
+    
     
     fill(0, 0, 255);
     ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
