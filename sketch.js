@@ -81,7 +81,7 @@ function draw() {
     let d = dist(earR.x, earR.y, earL.x, earL.y);
     fill(0, 100, 0);
     let randomMascot = random(mascot)
-    image (randomMascot, pose.rightEar.x, pose.nose.y-d)
+    image (randomMascot, pose.rightEar.x, pose.nose.y-d, 300, 300)
     
     filter (POSTERIZE, 3);
     
