@@ -86,9 +86,9 @@ function draw() {
     filter (POSTERIZE, 3);
     
     
-    fill(0, 0, 255);
-    ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
-    ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
+    //fill(0, 0, 255);
+    //ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
+    //ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
     
     // for (let i = 0; i < pose.keypoints.length; i++) {
     //   let x = pose.keypoints[i].position.x;
