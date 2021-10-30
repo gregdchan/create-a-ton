@@ -6,13 +6,14 @@ let isRecording = false;
 
 //framestrip array setup
 let pastFrames = [];
-let numFrames = 50;
+let numFrames = 35;
 let stripHeight;
 
 //posenet setup
 let poseNet;
 let pose;
 let skeleton;
+let canvas;
 
 //canvas
 const sketchWidth = 640;
@@ -30,23 +31,20 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(sketchWidth, sketchHeight);
+  let canvas = createCanvas(sketchWidth, sketchHeight);
   pixelDensity(1);
   cam = createCapture(VIDEO);
   cam.hide();
   const poseNet = ml5.poseNet(cam, modelLoaded);
   poseNet.on('pose', gotPoses);
-  //bobcat logo
-  
+  //layers
   stripHeight = height / numFrames;
-
   for (let i = 0; i < numFrames; i++) {
     let layer = createGraphics(width, height);
     pastFrames.push(layer);
   }
-
 }
-
+//posenet listener
 function modelLoaded() {
     console.log('poseNet ready');
 }
@@ -85,7 +83,7 @@ function draw() {
     image (randomMascot, pose.rightEar.x, pose.nose.y-d)
     
     // filter (POSTERIZE, 3);
-    tint(0, 153, 204);
+    tint(0, 153, 104);
     
     fill(0, 0, 255);
     ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
@@ -108,4 +106,10 @@ function draw() {
   }
   
 
+}
+
+function mousePressed() {
+  noLoop();
+  saveCanvas('myCanvas', 'jpg');
+  draw();
 }
