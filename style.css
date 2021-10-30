@@ -1,8 +1,79 @@
-html, body {
-    margin: 0;
-    padding: 0;
-  }
-  canvas {
-    display: block;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+#top {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(84.56deg, #2A850E 20%, rgba(217, 4, 41, 0.9) 97.41%);
+}
+
+h1 {
+  position: center;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 77px;
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 3%;
+}
+
+.top_des {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  /* identical to box height */
+  text-align: center;
+  color: rgba(255, 255, 255, 0.51);
+}
+
+.first {
+  padding-top: 2%;
+}
+
+.small-grey-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom: 1%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+a {
+  font-family: 'Roboto',sans-serif;
+  font-style: normal;
+  color: rgba(196, 37, 210, 0.42) 97.41%;
+}
+
+#thanky {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  padding-bottom: 3%;
+
+  color: #000000;
+}
+
+
   
