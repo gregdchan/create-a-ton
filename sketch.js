@@ -6,7 +6,7 @@ let isRecording = false;
 
 //framestrip array setup
 let pastFrames = [];
-let numFrames = 150;
+let numFrames = 10;
 let stripHeight;
 
 //posenet setup
@@ -19,7 +19,9 @@ const sketchWidth = 640;
 const sketchHeight= 480;
 
 //bobcat
-let bobCat; 
+let bobCat;
+
+let filters;
 
 function setup() {
   createCanvas(sketchWidth, sketchHeight);
@@ -30,6 +32,7 @@ function setup() {
   poseNet.on('pose', gotPoses);
   //bobcat logo
   bobCat = loadImage('assets/nyu.png');
+  
 
   stripHeight = height / numFrames;
 
@@ -76,16 +79,18 @@ function draw() {
     fill(0, 100, 0);
     image (bobCat, pose.rightEar.x, pose.nose.y-d)
     
+    filter (POSTERIZE, 3);
+    
     fill(0, 0, 255);
     ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
     ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
     
-    for (let i = 0; i < pose.keypoints.length; i++) {
-      let x = pose.keypoints[i].position.x;
-      let y = pose.keypoints[i].position.y;
-      fill(random(0,255),random(0,255),random(0,255));
-      ellipse(x,y,16,16);
-    }
+    // for (let i = 0; i < pose.keypoints.length; i++) {
+    //   let x = pose.keypoints[i].position.x;
+    //   let y = pose.keypoints[i].position.y;
+    //   fill(random(0,255),random(0,255),random(0,255));
+    //   ellipse(x,y,16,16);
+    // }
     
 //     for (let i = 0; i < skeleton.length; i++) {
 //       let a = skeleton[i][0];
