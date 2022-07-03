@@ -28,4 +28,4 @@ ML5.js
 # Update
 Our project received the "Most Creative use of Input/Output" award!
 
-![Award](https://drive.google.com/file/d/1TPdAh0lzJzdSR2S1ke-XGHdBVktWXUri/view?usp=sharing)
+![Award](https://github.com/gregdchan/create-a-ton/blob/main/GREG&LU-CREATE-AWARD.jpeg)
